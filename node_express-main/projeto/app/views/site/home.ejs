@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HOME</h1>
+    <% var texto = "TRABALHANDO COM EJBS"; %>
+    <p><%=texto%></p>
+
+    <ul>
+        <% for(var chave in clientes) { %>
+            <li><%=clientes[chave].nome %> - <%=clientes[chave].email %></li>
+        <% } %>
+    </ul>
+    <br>
+
+    <% if(erros){ %>
+        <ul>
+            <% for(var chave in erros){ %>
+                <li><%= erros[chave].msg %></li></li>
+            <% } %>
+        </ul>
+    <% } %>
+
+    <form action="/" method="post">
+        <input type="text" name="nome" placeholder="Nome" value="<%= dados.nome %>">
+        <input type="text" name="email" placeholder="E-mail" value="<%= dados.email %>">
+        <button type="submit">Adicionar</button>
+    </form>
+
+</body>
+</html>
